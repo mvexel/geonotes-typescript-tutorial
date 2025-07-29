@@ -1,8 +1,31 @@
 # Building GeoNotes with TypeScript: Project Overview
 
-# Building GeoNotes with TypeScript: Project Overview
-
 This tutorial builds a production-grade location-based API using TypeScript and Node.js. You'll implement enterprise patterns while learning TypeScript's type system through practical application.
+
+## Prerequisites
+
+**Required Experience:**
+- **Backend development** in any language (Python, Java, C#, Go, etc.)
+- **HTTP APIs** - understanding of REST principles, status codes, request/response patterns
+- **Database fundamentals** - SQL queries, relationships, basic performance concepts
+- **Command line** - comfortable with terminal operations and package managers
+
+**JavaScript Knowledge:**
+- **Basic syntax** - functions, objects, arrays, async/await
+- **ES6+ features** - destructuring, arrow functions, modules, promises
+- **Node.js basics** - package.json, npm/yarn, basic server concepts
+
+**Development Environment:**
+- **Node.js 18+** installed
+- **Code editor** with TypeScript support (VS Code recommended)
+- **PostgreSQL** instance (local or cloud)
+- **Git** for version control
+
+**What You Don't Need:**
+- Prior TypeScript experience (that's what we're teaching)
+- Frontend development knowledge
+- Docker or containerization (though helpful)
+- Cloud deployment experience (covered later)
 
 ## Why This Project
 
