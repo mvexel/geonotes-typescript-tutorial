@@ -2,6 +2,11 @@
 
 This project is focused on learning TypeScript by building a sophisticated location-based API called GeoNotes from scratch. The goal is to understand TypeScript fundamentals through practical application while building enterprise-grade software architecture.
 
+## General instructions
+- Please add forward links to the next lesson or step at the end of this 
+- Assume the audience is a fairly senior software developer with experience in at least one other language building back end software but little or no experience with enterprise scale concerns and related infrastructure.
+- Do not be overly obsequious, stay to the point, but do explain concepts in depth. 
+
 ## Learning Objectives
 
 ### Primary Goal

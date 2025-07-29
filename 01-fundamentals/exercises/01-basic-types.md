@@ -1,10 +1,10 @@
 # Exercise 1: Basic TypeScript Types
 
 ## Objective
-Practice defining TypeScript types for the GeoNotes API, demonstrating understanding of basic type concepts.
+Define TypeScript interfaces and types for the GeoNotes API domain, focusing on geographic data validation and extensible user data structures.
 
 ## Setup
-Create a new file `exercises/01-basic-types.ts` and complete each exercise.
+Create `exercises/01-basic-types.ts` and implement the following type definitions.
 
 ## Exercise 1: Define Note States
 
@@ -227,22 +227,13 @@ interface AuthResponse {
 
 ## Validation
 
-After completing the exercises:
+Compile your solution with `tsc --noEmit 01-basic-types.ts` to verify type correctness. Test edge cases by assigning invalid values and confirming TypeScript catches the errors.
 
-1. **Compile check**: Run TypeScript compiler to ensure no errors
-2. **Type safety**: Try assigning invalid values and verify TypeScript catches them
-3. **IntelliSense**: Check that your editor provides proper autocomplete
+## Key Takeaways
 
-## Next Steps
+- **Type safety vs runtime validation**: TypeScript types are compile-time only
+- **Extensible data**: `Record<string, any>` provides flexibility while maintaining some type safety
+- **Geographic constraints**: Coordinate validation belongs in both types and runtime checks
+- **API design**: Separate creation and response interfaces for different use cases
 
-1. Complete `02-classes-and-interfaces.md` for object-oriented patterns
-2. Study the reference materials for deeper understanding
-3. Start thinking about how these types will work with your API endpoints
-
-## Common Mistakes to Avoid
-
-- **Don't use `any`** - it defeats the purpose of TypeScript
-- **Remember runtime validation** - TypeScript types disappear when code runs
-- **Use optional properties** (`?`) instead of `| undefined` when possible
-- **Follow naming conventions** - camelCase for properties, PascalCase for interfaces
-- **Be specific** - `string` is better than `any`, but `"admin" | "user"` is better than `string`
+**Next:** Proceed to [Lesson 2: Classes and Interfaces](../lessons/02-classes-interfaces.md) for object-oriented patterns in the GeoNotes domain.

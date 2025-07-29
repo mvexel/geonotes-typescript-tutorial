@@ -1,14 +1,12 @@
 # Building GeoNotes with TypeScript: Project Overview
 
-## Your Journey Starts Here
+# Building GeoNotes with TypeScript: Project Overview
 
-Welcome to a comprehensive TypeScript learning journey that will transform how you think about software development. You're about to build **GeoNotes** - a sophisticated location-based API that could genuinely make a difference in the world while mastering one of the most valuable skills in modern development.
+This tutorial builds a production-grade location-based API using TypeScript and Node.js. You'll implement enterprise patterns while learning TypeScript's type system through practical application.
 
-## What Makes This Different
+## Why This Project
 
-Most programming tutorials teach syntax with toy examples - you learn `for` loops by printing numbers, or build a todo app that nobody will ever use. **This is different.**
-
-You're going to build **infrastructure software** - the kind that powers real cities, helps scientists collect data, and makes communities better. The GeoNotes API you'll create could actually be deployed and used by thousands of people.
+Instead of toy examples, you'll build infrastructure software with real-world complexity. GeoNotes handles the same patterns found in production systems like municipal 311 APIs, crowdsourced mapping platforms, and field research tools.
 
 ## The Story Behind GeoNotes
 
@@ -304,30 +302,10 @@ By the end of this journey, you'll have:
 4. **A portfolio project** that demonstrates enterprise-grade software engineering skills
 5. **Confidence** to tackle any backend development challenge
 
-## The Challenge Ahead
 
-This isn't easy. Professional software development never is. You'll encounter concepts that feel overwhelming at first. You'll debug problems that seem impossible. You'll refactor code multiple times to get it right.
 
-**That's exactly the point.**
+## Getting Started
 
-Every challenge you overcome building GeoNotes will prepare you for real-world development. Every pattern you learn will apply to countless other projects. Every bug you fix will make you a better engineer.
+The tutorial is structured in phases that build progressively. You'll start with TypeScript fundamentals applied to the GeoNotes domain, then build the actual API implementation.
 
-## The Support Structure
-
-This isn't a solo journey. The learning materials are designed to support you every step of the way:
-
-- **Incremental progression** from simple concepts to complex architecture
-- **Practical exercises** that reinforce each concept with hands-on coding
-- **Real-world context** for every decision and pattern
-- **Comprehensive references** for deeper exploration
-- **Working examples** that you can run and modify
-
-## Your Next Step
-
-Take a moment to appreciate what you're about to accomplish. Not everyone has the curiosity and determination to learn professional software development. You do.
-
-**Ready to begin?** Let's start with TypeScript fundamentals and begin building your GeoNotes API.
-
----
-
-*"The expert in anything was once a beginner who refused to give up." - Keep that spirit alive as you code.*
+**Next:** Continue to [Chapter 1: TypeScript Fundamentals](../01-fundamentals/lessons/01-typescript-basics.md) to begin with type system concepts applied to location-based data structures.
