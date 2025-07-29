@@ -15,6 +15,15 @@ Our GeoNotes API needs to track the lifecycle of notes. A note can be:
 
 **Your Task**: Create TypeScript types for note states using both string literal unions and enums.
 
+**JavaScript Comparison:**
+```javascript
+// JavaScript - no constraints on state values
+let state = "new";
+state = "typo_state"; // No error, potential runtime bug
+```
+
+**Reference:** [TypeScript Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)
+
 <details>
 <summary>Solution</summary>
 
@@ -55,6 +64,19 @@ A note response includes all creation fields plus:
 - userData (required object for extensible user-defined data)
 
 **Your Task**: Create TypeScript interfaces for `NoteCreate` and `NoteResponse`.
+
+**JavaScript Comparison:**
+```javascript
+// JavaScript - no structure enforcement
+const createData = {
+  latitude: "invalid", // Should be number
+  longitude: -74.0060,
+  description: "Pothole"
+  // No indication of required vs optional fields
+};
+```
+
+**Reference:** [TypeScript Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html)
 
 <details>
 <summary>Solution</summary>
@@ -115,6 +137,19 @@ Create a generic wrapper for API responses, similar to your Python response patt
 2. Paginated response
 3. Error response
 
+**JavaScript Comparison:**
+```javascript
+// JavaScript - no way to enforce response structure
+function apiResponse(data) {
+  return {
+    data: data, // Could be any type
+    success: true
+  };
+}
+```
+
+**Reference:** [TypeScript Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
+
 <details>
 <summary>Solution</summary>
 
@@ -153,6 +188,17 @@ Our API receives data from users that might not match our types. We need functio
 **Your Task**: Write type guards for:
 1. Validating if an object is a valid `NoteCreate` (check all required fields and coordinate ranges)
 2. Checking if a string is a valid `NoteState`
+
+**JavaScript Comparison:**
+```javascript
+// JavaScript - validation but no type narrowing
+function isValidNote(obj) {
+  return obj && typeof obj.latitude === 'number';
+  // obj is still 'any' type after this check in TypeScript terms
+}
+```
+
+**Reference:** [TypeScript Type Guards](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)
 
 <details>
 <summary>Solution</summary>
@@ -196,6 +242,18 @@ Our API also needs user management. Create types for:
 3. **AuthResponse interface** for login (user info + accessToken string + expiresIn number)
 
 **Your Task**: Define these three interfaces for user management.
+
+**JavaScript Comparison:**
+```javascript
+// JavaScript - no indication of required fields or types
+const user = {
+  id: 1,
+  username: "john",
+  isAdmin: "yes" // Should be boolean
+};
+```
+
+**Reference:** [TypeScript Object Types](https://www.typescriptlang.org/docs/handbook/2/objects.html)
 
 <details>
 <summary>Solution</summary>

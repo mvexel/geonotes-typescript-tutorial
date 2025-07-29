@@ -1,58 +1,89 @@
 # Lesson 1: TypeScript Basics
 
 ## Learning Objectives
-- Understand TypeScript's type system and why it's valuable
-- Learn primitive types, interfaces, and basic type annotations
-- Apply TypeScript types to GeoNotes domain concepts
+- Understand TypeScript's type system and why it's valuable for enterprise APIs
+- Learn primitive types, interfaces, and basic type annotations applied to geographic data
+- Apply TypeScript types to GeoNotes domain concepts with compile-time safety
 
 ## TypeScript for Enterprise APIs
 
 TypeScript adds static typing to JavaScript, enabling compile-time error detection and improved tooling for large codebases. For APIs handling geographic data and user-generated content, the type system prevents entire categories of runtime errors.
 
-
-```typescript
-// TypeScript - catches errors before running
-interface NoteCreate {
-  latitude: number;
-  longitude: number; 
-  description: string;
-  isPrivate?: boolean; // Optional property
-}
-
-function createNote(lat: number, lng: number, description: string): NoteCreate {
+**JavaScript vs TypeScript:**
+```javascript
+// JavaScript - runtime errors only
+function createNote(lat, lng, description) {
   return {
     latitude: lat,
     longitude: lng,
     description: description,
-    isPrivate: false
+    createdAt: new Date()
   };
 }
 
-// Prevents coordinate validation errors at compile time
-// createNote("not a number", null, 123); // ❌ Type error!
+// This compiles but fails at runtime:
+createNote("invalid", null, 123);
 ```
+
+```typescript
+// TypeScript - compile-time safety
+function createNote(lat: number, lng: number, description: string): Note {
+  return {
+    latitude: lat,
+    longitude: lng,
+    description: description,
+    createdAt: new Date()
+  };
+}
+
+// TypeScript catches this before runtime:
+// createNote("invalid", null, 123); // ❌ Compile error
+```
+
+**Reference:** [TypeScript Handbook - Basic Types](https://www.typescriptlang.org/docs/handbook/2/basic-types.html)
 
 ## Core Type System
 
 ### Primitive Types
 
+**JavaScript vs TypeScript:**
+```javascript
+// JavaScript - no type constraints
+let noteId = 1;
+let description = "Road needs repair";
+let coordinates = [40.7128, -74.0060];
+// Any value can be assigned later: noteId = "string"; // No error
+```
+
 ```typescript
-// Geographic data requires precise typing
+// TypeScript - explicit type constraints
 let noteId: number = 1;
 let description: string = "Road needs repair";
 let isPrivate: boolean = false;
 let coordinates: number[] = [40.7128, -74.0060]; // [lat, lng]
 let tags: string[] = ["urgent", "infrastructure"];
 
-// Avoid 'any' - defeats type safety purpose
-// let metadata: any = { source: "mobile_app" }; // ❌ Poor practice
-let metadata: { source: string; timestamp?: Date } = { source: "mobile_app" }; // ✅ Better
+// Compile-time error prevention:
+// noteId = "string"; // ❌ Type error
 ```
+
+**Reference:** [TypeScript Handbook - Everyday Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html)
 
 ### Optional Types
 
+**JavaScript vs TypeScript:**
+```javascript
+// JavaScript - no indication which properties are optional
+const note = {
+  latitude: 40.7128,
+  longitude: -74.0060,
+  description: "Pothole"
+  // id and ownerId may or may not be present
+};
+```
+
 ```typescript
-// Optional properties for API flexibility
+// TypeScript - explicit optional properties
 interface Note {
   id?: number;        // Set by database on creation
   latitude: number;   // Required - validated range
@@ -62,29 +93,52 @@ interface Note {
 }
 ```
 
+The `?` syntax makes optionality explicit in the type system, unlike JavaScript where any property might be undefined.
+
+**Reference:** [TypeScript Handbook - Optional Properties](https://www.typescriptlang.org/docs/handbook/2/objects.html#optional-properties)
+
 ### Union Types
 
+**JavaScript vs TypeScript:**
+```javascript
+// JavaScript - no constraint on state values
+let noteState = "new"; // Could be typo'd as "nwe"
+noteState = "invalid_state"; // No error, runtime bug
+```
+
 ```typescript
-// String literal unions for controlled vocabularies
+// TypeScript - constrained to valid values
 type NoteState = "new" | "taken" | "closed";
-type ID = string | number; // API flexibility
+let noteState: NoteState = "new";
+// noteState = "invalid_state"; // ❌ Compile error
 
 // Enums provide runtime values and reverse mapping
-enum NoteState {
+enum NoteStateEnum {
   NEW = "new",
   TAKEN = "taken", 
   CLOSED = "closed"
 }
-
-// String literals vs enums: use literals for simple cases, enums for complex logic
 ```
+
+Union types constrain values to specific options, preventing typos and invalid states that would cause runtime errors in JavaScript.
+
+**Reference:** [TypeScript Handbook - Union Types](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#union-types)
 
 ## Interfaces vs Types
 
-TypeScript has two ways to define object shapes:
+**JavaScript vs TypeScript:**
+```javascript
+// JavaScript - no structure enforcement
+const note = {
+  latitude: 40.7128,
+  longitude: -74.0060,
+  description: "Issue",
+  typo_in_property: "oops" // No error
+};
+```
 
 ```typescript
-// Interface (extendable, like class inheritance)
+// TypeScript - enforced structure
 interface BaseNote {
   latitude: number;
   longitude: number;
@@ -106,10 +160,12 @@ type NoteResponse = {
   createdAt: Date;
 };
 
-// When to use which:
+// Usage patterns:
 // - Interface: When you might extend or implement
 // - Type: For unions, computed types, or simple aliases
 ```
+
+**Reference:** [TypeScript Handbook - Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html) and [Type Aliases](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#type-aliases)
 
 ## Building GeoNotes Types
 
@@ -152,52 +208,36 @@ interface UserCreate {
 }
 ```
 
-## Type Guards and Validation
-
-TypeScript types are removed at runtime, so we need explicit validation for user input:
-
-```typescript
-// Type guard function - checks if data matches our Note interface
-function isValidNoteCreate(obj: any): obj is NoteCreate {
-  return (
-    typeof obj === 'object' &&
-    obj !== null &&
-    typeof obj.latitude === 'number' &&
-    typeof obj.longitude === 'number' &&
-    typeof obj.description === 'string' &&
-    obj.latitude >= -90 && obj.latitude <= 90 &&        // Valid latitude
-    obj.longitude >= -180 && obj.longitude <= 180 &&     // Valid longitude
-    obj.description.length > 0                           // Not empty
-  );
-}
-
-// Usage in API endpoint
-function createNote(requestData: unknown) {
-  if (isValidNoteCreate(requestData)) {
-    // TypeScript now knows 'requestData' is a NoteCreate
-    console.log(`Creating note at ${requestData.latitude}, ${requestData.longitude}`);
-    return requestData; // Safe to use
-  } else {
-    throw new Error('Invalid note data');
-  }
-}
-```
-
 ## Record Types and Extensible Data
 
-The `Record<K, V>` type is perfect for extensible data structures:
+**JavaScript vs TypeScript:**
+```javascript
+// JavaScript - no type safety for dynamic properties
+const note = {
+  id: 1,
+  latitude: 40.7128,
+  longitude: -74.0060,
+  userData: {
+    category: "road",
+    severity: "high",
+    estimatedCost: "should be number" // Type error not caught
+  }
+};
+```
 
 ```typescript
-// Record<string, any> allows any property with string keys
+// TypeScript - structured flexibility with Record<K, V>
 interface Note {
   id: number;
   latitude: number;
   longitude: number;
-  description: string;
-  userData: Record<string, any>;  // Flexible user data
-  createdAt: Date;
+  userData: Record<string, any>; // Any properties with string keys
 }
+```
 
+The `Record<K, V>` utility type provides structured flexibility for extensible data:
+
+```typescript
 // Examples of how userData might be used:
 const infrastructureNote: Note = {
   id: 1,
@@ -237,18 +277,89 @@ function getCostEstimate(note: Note): number | undefined {
 }
 ```
 
-## Generic Types
+**Reference:** [TypeScript Handbook - Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html#recordkeys-type)
 
-TypeScript generics are powerful for reusable code:
+## Type Guards and Validation
+
+**JavaScript vs TypeScript:**
+```javascript
+// JavaScript - runtime validation only
+function isValidNote(obj) {
+  return obj && 
+         typeof obj.latitude === 'number' &&
+         typeof obj.longitude === 'number' &&
+         typeof obj.description === 'string';
+}
+```
 
 ```typescript
-// Generic response wrapper - works with any data type
+// TypeScript - compile-time types + runtime validation
+function isValidNoteCreate(obj: any): obj is NoteCreate {
+  return (
+    typeof obj === 'object' &&
+    obj !== null &&
+    typeof obj.latitude === 'number' &&
+    typeof obj.longitude === 'number' &&
+    typeof obj.description === 'string' &&
+    obj.latitude >= -90 && obj.latitude <= 90 &&
+    obj.longitude >= -180 && obj.longitude <= 180
+  );
+}
+```
+
+TypeScript types are erased at runtime, so explicit validation is still required for external data:
+
+**Reference:** [TypeScript Handbook - Type Guards](https://www.typescriptlang.org/docs/handbook/2/narrowing.html#using-type-predicates)
+
+```typescript
+// Usage in API endpoint
+function createNote(requestData: unknown) {
+  if (isValidNoteCreate(requestData)) {
+    // TypeScript now knows 'requestData' is a NoteCreate
+    console.log(`Creating note at ${requestData.latitude}, ${requestData.longitude}`);
+    return requestData; // Safe to use
+  } else {
+    throw new Error('Invalid note data');
+  }
+}
+```
+
+## Generic Types
+
+**JavaScript vs TypeScript:**
+```javascript
+// JavaScript - no way to specify what type of data ApiResponse contains
+function getNotesResponse(notes) {
+  return {
+    data: notes,
+    success: true,
+    message: "Notes retrieved"
+  };
+}
+```
+
+```typescript
+// TypeScript - generic constraints ensure type safety
 interface ApiResponse<T> {
   data: T;
   success: boolean;
   message?: string;
 }
 
+function getNotesResponse<T>(data: T): ApiResponse<T> {
+  return {
+    data,
+    success: true,
+    message: "Data retrieved"
+  };
+}
+```
+
+Generics provide type safety for reusable code patterns:
+
+**Reference:** [TypeScript Handbook - Generics](https://www.typescriptlang.org/docs/handbook/2/generics.html)
+
+```typescript
 interface PagedResponse<T> {
   items: T[];
   total: number;
@@ -273,14 +384,6 @@ const notesList: NotesResponse = {
 };
 ```
 
-## Why TypeScript Matters for APIs
-
-1. **Compile-time Safety**: Catch errors before your code runs
-2. **Better IntelliSense**: Your editor can provide accurate autocomplete
-3. **Refactoring**: Rename variables/functions safely across your entire codebase
-4. **Documentation**: Types serve as inline documentation
-5. **Team Collaboration**: Types make code intent clear to other developers
-
 ## Enterprise Type Safety Benefits
 
 1. **Compile-time Safety**: Geographic coordinate validation, user permission checks
@@ -291,7 +394,9 @@ const notesList: NotesResponse = {
 
 **Next:** Complete [Exercise 1: Basic Types](../exercises/01-basic-types.md) to practice defining GeoNotes domain types.
 
-## References
+## Additional References
+
 - [TypeScript Handbook - Basic Types](https://www.typescriptlang.org/docs/handbook/2/basic-types.html)
 - [TypeScript Playground](https://www.typescriptlang.org/play)
-- [Interface vs Type](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+- [Interface vs Type Aliases](https://www.typescriptlang.org/docs/handbook/2/everyday-types.html#differences-between-type-aliases-and-interfaces)
+- [Utility Types](https://www.typescriptlang.org/docs/handbook/utility-types.html)
