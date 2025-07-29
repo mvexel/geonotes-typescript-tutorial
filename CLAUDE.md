@@ -6,6 +6,8 @@ This project is focused on learning TypeScript by building a sophisticated locat
 - Please add forward links to the next lesson or step at the end of this 
 - Assume the audience is a fairly senior software developer with experience in at least one other language building back end software but little or no experience with enterprise scale concerns and related infrastructure.
 - Do not be overly obsequious, stay to the point, but do explain concepts in depth. 
+- Make sure we have a consistent teaching and writing style throughout
+- Avoid second guessing earlier decisions about the project architecture, but if we do, revisit earlier chapters to ensure consistency.
 
 ## Learning Objectives
 
