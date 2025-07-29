@@ -8,7 +8,7 @@ This project is focused on learning TypeScript by building a sophisticated locat
 Build a complete GeoNotes API using TypeScript/Node.js while learning TypeScript concepts progressively. We'll create a system that allows users to submit location-based notes about real-world issues and observations.
 
 ### Learning Structure
-All learning materials are organized in `.claude/learning/` with structured lessons, exercises, and references.
+All learning materials are organized under the project root with structured lessons, exercises, and references.
 
 ## What We're Building: GeoNotes API Overview
 GeoNotes is an enterprise-grade REST API for submitting "geonotes" - location-based reports that can be anything a human or system would want to communicate about a specific place. Think of it as a global issue reporting system where users can:
@@ -58,7 +58,7 @@ GeoNotes is an enterprise-grade REST API for submitting "geonotes" - location-ba
 ## Development Guidelines
 
 ### File Organization
-- **Learning materials**: `.claude/learning/`
+- **Learning materials**: project root, onw directory per phase
 - **TypeScript implementation**: `ts-geonotes/` (to be created)
 - **API documentation**: Detailed specifications for what we're building
 

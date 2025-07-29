@@ -134,6 +134,7 @@ interface Note {
   latitude: number;     // Geographic coordinate
   longitude: number;    // Geographic coordinate  
   description: string;  // What the user reported
+  userData: Record<string, any>;  // Extensible user-defined data
   createdAt: Date;      // When it was created
 }
 
@@ -142,6 +143,7 @@ interface NoteCreate {
   latitude: number;
   longitude: number;
   description: string;
+  userData?: Record<string, any>;  // Optional extensible data
 }
 
 // For user accounts
@@ -190,6 +192,60 @@ function createNote(requestData: unknown) {
   } else {
     throw new Error('Invalid note data');
   }
+}
+```
+
+## Record Types and Extensible Data
+
+The `Record<K, V>` type is perfect for extensible data structures:
+
+```typescript
+// Record<string, any> allows any property with string keys
+interface Note {
+  id: number;
+  latitude: number;
+  longitude: number;
+  description: string;
+  userData: Record<string, any>;  // Flexible user data
+  createdAt: Date;
+}
+
+// Examples of how userData might be used:
+const infrastructureNote: Note = {
+  id: 1,
+  latitude: 40.7128,
+  longitude: -74.0060,
+  description: "Pothole blocking bike lane",
+  userData: {
+    category: "road",
+    severity: "high",
+    estimatedCost: 500,
+    affectedVehicles: ["car", "bike"]
+  },
+  createdAt: new Date()
+};
+
+const businessNote: Note = {
+  id: 2,
+  latitude: 40.7589,
+  longitude: -73.9851,
+  description: "Great new coffee shop",
+  userData: {
+    businessType: "restaurant",
+    cuisine: "coffee",
+    priceRange: "$$",
+    hours: { mon: "7-19", tue: "7-19" },
+    rating: 4.5
+  },
+  createdAt: new Date()
+};
+
+// Type-safe access requires checking
+function getCostEstimate(note: Note): number | undefined {
+  if (typeof note.userData.estimatedCost === 'number') {
+    return note.userData.estimatedCost;
+  }
+  return undefined;
 }
 ```
 

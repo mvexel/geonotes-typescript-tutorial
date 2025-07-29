@@ -45,12 +45,14 @@ A note creation request should include:
 - longitude (number between -180 and 180)
 - description (string)
 - isPrivate (optional boolean, defaults to false)
+- userData (optional object for extensible user-defined data)
 
 A note response includes all creation fields plus:
 - id (number)
 - state (one of the note states from exercise 1)
 - createdAt (Date)
 - ownerId (optional number, for private notes)
+- userData (required object for extensible user-defined data)
 
 **Your Task**: Create TypeScript interfaces for `NoteCreate` and `NoteResponse`.
 
@@ -63,6 +65,7 @@ interface NoteCreate {
   longitude: number;
   description: string;
   isPrivate?: boolean; // Optional with default false
+  userData?: Record<string, any>; // Optional extensible data
 }
 
 interface NoteResponse {
@@ -72,9 +75,34 @@ interface NoteResponse {
   description: string;
   state: NoteState;
   isPrivate: boolean;
+  userData: Record<string, any>; // Required extensible data
   createdAt: Date;
   ownerId?: number; // Optional - only set for private notes
 }
+
+// Example usage:
+const infrastructureReport: NoteCreate = {
+  latitude: 40.7128,
+  longitude: -74.0060,
+  description: "Pothole blocking bike lane",
+  userData: {
+    category: "infrastructure",
+    severity: "high",
+    estimatedCost: 500
+  }
+};
+
+const businessListing: NoteCreate = {
+  latitude: 40.7589,
+  longitude: -73.9851,
+  description: "New artisan bakery",
+  userData: {
+    businessType: "food",
+    cuisine: "bakery",
+    priceRange: "$$",
+    openingHours: "6-18"
+  }
+};
 ```
 </details>
 
@@ -138,6 +166,7 @@ function isNoteCreate(obj: any): obj is NoteCreate {
     typeof obj.longitude === 'number' &&
     typeof obj.description === 'string' &&
     (obj.isPrivate === undefined || typeof obj.isPrivate === 'boolean') &&
+    (obj.userData === undefined || (typeof obj.userData === 'object' && obj.userData !== null)) &&
     obj.latitude >= -90 && obj.latitude <= 90 &&
     obj.longitude >= -180 && obj.longitude <= 180
   );
