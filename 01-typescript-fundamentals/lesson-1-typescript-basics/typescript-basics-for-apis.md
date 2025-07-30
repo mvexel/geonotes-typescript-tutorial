@@ -1,9 +1,8 @@
 # Lesson 1: TypeScript Basics for APIs
 
 ## Learning Objectives
-- Understand why production APIs need structured data contracts
-- Learn how TypeScript enforces these contracts at compile time
-- Apply TypeScript's type system to geographic data modeling
+
+By the end of this lesson, you'll understand why production APIs need structured data contracts, learn how TypeScript enforces these contracts at compile time, and apply TypeScript's type system to geographic data modeling.
 
 ## Why APIs Need Data Contracts
 
@@ -11,10 +10,7 @@ Building production APIs means serving external clients - mobile apps, web front
 
 **The core challenge:** How do you guarantee that your API returns consistent data shapes across time, team changes, and codebase evolution?
 
-**Traditional approaches:**
-- **Documentation-based contracts** - Easy to get out of sync with code
-- **Runtime validation** - Catches errors after deployment
-- **Integration testing** - Expensive and slow feedback loop
+Traditional approaches include documentation-based contracts that easily drift out of sync with code, runtime validation that catches errors only after deployment, and integration testing that provides expensive and slow feedback loops.
 
 **TypeScript's approach:** Move contract validation to **compile time**. If your code compiles, your contracts are valid.
 
@@ -50,11 +46,7 @@ function createNote(req, res) {
 }
 ```
 
-**Problems:**
-1. **Property name mismatches** between docs and implementation
-2. **No validation** of incoming data types
-3. **Silent failures** when data structure changes
-4. **Manual synchronization** between docs and code
+This approach suffers from property name mismatches between docs and implementation, no validation of incoming data types, silent failures when data structures change, and the need for manual synchronization between docs and code.
 
 ### TypeScript's Solution: Compile-Time Contracts
 
@@ -99,11 +91,7 @@ function createNote(req: Request<{}, NoteResponse, NoteCreateRequest>, res: Resp
 }
 ```
 
-**TypeScript ensures:**
-1. **Request structure** matches expected shape
-2. **Response structure** matches API contract
-3. **Property names** are exactly correct
-4. **Data types** are enforced throughout
+TypeScript ensures that request structures match expected shapes, response structures match API contracts, property names are exactly correct, and data types are enforced throughout your application.
 
 **Reference:** [TypeScript Handbook - Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html)
 
@@ -371,12 +359,7 @@ interface NoteService {
 }
 ```
 
-**Key concepts to include:**
-1. **Geographic coordinate validation** (lat/lng ranges)
-2. **Flexible metadata structure** for different note types
-3. **Type-safe async operations** with proper Promise types
-4. **Input validation** with type guards
-5. **Response formatting** to hide sensitive data
+Focus on geographic coordinate validation with proper lat/lng ranges, flexible metadata structures for different note types, type-safe async operations with proper Promise types, input validation with type guards, and response formatting to hide sensitive data.
 
 **Next:** Continue to [Lesson 2: Advanced Types & Domain Modeling](../lesson-2-advanced-types/advanced-types-domain-modeling.md) to learn how generics and utility types scale these patterns across your entire API.
 

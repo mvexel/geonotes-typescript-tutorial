@@ -10,6 +10,8 @@ We will guide the user in building a location-based API called GeoNotes from scr
 - You MUST review each file at the start of a session for specific instructions wherever you are mentioned with @claude
 - You MUST be critical of my choices. I have teaching experience but I have never created a technical course before
 - - You MUST NOT be overly obsequious. Stay to the point, but do explain concepts in depth. 
+- You MUST use a flowing prose style rather than rigid bullet-point structures. Instead of "Why needed:", "How we implement:", "How TypeScript helps:" headers, weave the engineering context, implementation approach, and TypeScript advantages together naturally in conversational paragraphs. The goal is gentler, more engaging technical writing that reads like a thoughtful discussion rather than a reference manual.
+- You MUST avoid using bulleted or numbered lists as much as possible
 - You MUST add references to the official documentation whenever a new concept is introduced.
 - You MUST demonstrate how Typescript differs from JavaScript wherever possible.
 - You MUST add forward links to the next lesson or step at the end of each lesson
