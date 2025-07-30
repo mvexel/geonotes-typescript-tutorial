@@ -11,6 +11,7 @@ You may think that what you have in front of you is 95% Claude and 5% me. You wo
 So where I am going with this, is that this is not going to be a completely free course. Even though I am unemployed right now (which is why I have time to do this in the first place!) my time has value, and I think the end result will have value for you as well. I'll probably tease the first three or four chapters and ask a reasonable amount of money for the full thing. 
 
 Learn with me!
+
 *Martijn*
 
 ## What We'll Build
