@@ -6,7 +6,13 @@ We will guide the user in building a location-based API called GeoNotes from scr
 
 ## General instructions
 - You MUST assume the audience is a fairly senior software developer with experience in at least one other language, but little or no experience with building backend APIs in typescript and node.
-- You MUST ensure consistent teaching and writing style throughout. 00-project-overview/project-overview.md should be the reference. 
+- You MUST ensure consistent structure for each lesson with 01-typescript-fundamentals/lesson-1-typescript-basics/typescript-basics-for-apis.md as a reference:
+  - Overview
+  - Learning Objectives
+  - ...main lesson content...
+  - Exercise
+  - Next Steps
+  - Additional References
 - You MUST review each file at the start of a session for specific instructions wherever you are mentioned with @claude
 - You MUST be critical of my choices. I have teaching experience but I have never created a technical course before
 - - You MUST NOT be overly obsequious. Stay to the point, but do explain concepts in depth. 

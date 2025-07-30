@@ -320,50 +320,10 @@ async function createNoteFromAddress(description: string, address: string): Prom
 
 **Reference:** [TypeScript Async/Await](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html#asyncawait)
 
-## Practical Exercise: Building GeoNotes Types
+## Exercise
+[Exercise 1: Basic TypeScript Interface Definition](/exercises/chapter1/01-basic-types-interfaces.md)
 
-Create a complete type-safe foundation for the GeoNotes API:
-
-```typescript
-// TODO: Define core interfaces
-interface GeoNote {
-  // Define the complete note structure
-  // Consider: id, coordinates, content, metadata, timestamps
-}
-
-// TODO: Define request/response types
-interface CreateNoteRequest {
-  // What should clients send to create a note?
-}
-
-interface NoteListResponse {
-  // How should paginated note lists be structured?
-  // Consider: data array, pagination metadata, total count
-}
-
-// TODO: Define discriminated unions for note types
-type NoteType = 'infrastructure' | 'business' | 'event';
-
-interface InfrastructureNote extends GeoNote {
-  // Infrastructure-specific fields
-}
-
-// TODO: Implement type guards
-function isValidCreateNoteRequest(obj: unknown): obj is CreateNoteRequest {
-  // Validate structure and business rules
-  // Check coordinate ranges, description length, etc.
-}
-
-// TODO: Define async service interface  
-interface NoteService {
-  createNote(request: CreateNoteRequest): Promise<GeoNote>;
-  findNearbyNotes(lat: number, lng: number, radiusMeters: number): Promise<GeoNote[]>;
-  updateNote(id: number, updates: Partial<GeoNote>): Promise<GeoNote>;
-}
-```
-
-Focus on geographic coordinate validation with proper lat/lng ranges, flexible metadata structures for different note types, type-safe async operations with proper Promise types, input validation with type guards, and response formatting to hide sensitive data.
-
+## Next Steps
 **Next:** Continue to [Lesson 2: Advanced Types & Domain Modeling](../lesson-2-advanced-types/advanced-types-domain-modeling.md) to learn how generics and utility types scale these patterns across your entire API.
 
 ## Additional References
