@@ -1,10 +1,10 @@
 # Building a Geospatial API with TypeScript
 
-In this tutorial, you will build a production-grade location-based API using TypeScript and Node.js: GeoNotes. You'll implement enterprise patterns while learning TypeScript's type system through practical application.
+In this course, you will build a production-grade location-based API using TypeScript and Node.js: GeoNotes. You'll implement enterprise patterns while learning TypeScript's type system through practical application.
 
 ## What you should bring
 
-This is a tutorial for experienced developers. If you're new to software development and have never built an API of any kind, this tutorial is probably not for you.
+This is a course for experienced developers. If you're new to software development and have never built an API of any kind, this course is probably not for you.
 
 **Dev experience**
 - **Backend development** in any language (Python, Java, C#, Go, etc.)
@@ -136,6 +136,6 @@ By the end of this journey, you'll have:
 
 ## Getting Started
 
-The tutorial is structured in phases that build progressively. You'll start with TypeScript fundamentals applied to the GeoNotes domain, then build the actual API implementation.
+The course is structured in chapters that build progressively. You'll start with TypeScript fundamentals applied to the GeoNotes domain, then build the actual API implementation.
 
-**Next:** Continue to [Chapter 1: TypeScript Fundamentals](../01-fundamentals/lessons/01-typescript-basics.md) to begin with type system concepts applied to location-based data structures.
+**Next:** Continue to [Chapter 1: TypeScript Fundamentals](../01-typescript-fundamentals/lesson-1-fundamentals/typescript-basics.md) to begin with type system concepts applied to location-based data structures.
