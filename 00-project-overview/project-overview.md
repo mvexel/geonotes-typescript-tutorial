@@ -64,81 +64,6 @@ At its heart, a "geonote" is just a message tied to coordinates:
 
 But we'll build sophisticated features around this simple model.
 
-## What We'll Build Together
-
-### 1. Core Note Management
-- **Create notes** with coordinates, descriptions, and custom user data
-- **Read notes** with geographic and text-based filtering
-- **Update note status** as issues are addressed
-- **Delete notes** when no longer relevant
-
-### 2. Note Lifecycle
-Notes progress through states:
-- **new**: Just reported, needs attention
-- **taken**: Someone is working on it
-- **closed**: Issue resolved or note is complete
-- **can reopen**: Closed notes can return to "new" if needed
-
-### 3. User System
-- **User registration** and authentication
-- **JWT token-based** secure API access
-- **Role-based permissions** (regular users vs admins)
-- **User profiles** and settings
-
-### 4. Privacy Features
-- **Public notes**: Visible to everyone
-- **Private notes**: Only visible to the creator
-- **Quota system**: Limits on private note creation
-- **Admin oversight**: Administrative controls
-
-### 5. Geographic Features
-- **Coordinate validation**: Ensure valid lat/lng values
-- **Radius searching**: Find notes within X kilometers
-- **Spatial indexing**: Fast geographic queries
-- **PostGIS integration**: Advanced spatial operations
-
-### 6. Bulk Operations
-- **Bulk import**: Upload thousands of notes at once
-- **Async processing**: Handle large operations in background
-- **Progress tracking**: Monitor bulk operation status
-- **Error reporting**: Detailed feedback on failed operations
-
-### 7. Enterprise Features
-- **Comprehensive logging**: Track all system activity
-- **Metrics and monitoring**: Prometheus-compatible metrics
-- **Health checks**: System status endpoints
-- **Rate limiting**: Prevent abuse
-- **Input validation**: Secure data handling
-
-## API Structure
-
-### Core Endpoints
-```
-GET    /api/v1/notes           # List notes with filtering
-POST   /api/v1/notes           # Create a new note
-GET    /api/v1/notes/{id}      # Get specific note
-PUT    /api/v1/notes/{id}      # Update note
-DELETE /api/v1/notes/{id}      # Delete note
-
-POST   /api/v1/notes/bulk      # Bulk create notes
-GET    /api/v1/jobs/{id}       # Check bulk job status
-```
-
-### User Management
-```
-POST   /api/v1/auth/register   # Create account
-POST   /api/v1/auth/login      # Get JWT token
-GET    /api/v1/users/me        # Get current user info
-PUT    /api/v1/users/me        # Update profile
-```
-
-### System Endpoints
-```
-GET    /api/health             # System health check
-GET    /api/metrics            # Prometheus metrics
-GET    /api/version            # API version info
-```
-
 ## Concepts, Patterns and Technology we will use
 
 Some of the ingredients we will use will sound familiar to you, but it will be useful to see them discussed in the context of Typescript and node.js. No need to study up on any of these right now, we will talk about them as we come across them.
@@ -161,27 +86,27 @@ Some of the ingredients we will use will sound familiar to you, but it will be u
 - **Error Handling**: Consistent error responses
 - **Input Validation**: Type-safe request validation
 
-## Table of Contents
+## Course Organization
 
-### Chapter 1: TypeScript Foundations
+### Phase 1: TypeScript Foundations
 - **Type system basics**: Numbers, strings, booleans, objects
 - **Interfaces and types**: Defining data structures
 - **Functions and classes**: Building reusable components
 - **Generics**: Writing flexible, reusable code
 
-### Chapter 2: Building the API
+### Phase 2: Building the API
 - **Node.js setup**: Project structure and tooling
 - **HTTP server**: Handling requests and responses
 - **Database integration**: Persistent data storage
 - **Authentication**: Secure user access
 
-### Chapter 3: Advanced Features
+### Phase 3: Advanced Features
 - **Geographic queries**: Finding notes by location
 - **Bulk operations**: Handling large datasets
 - **Privacy controls**: Public vs private notes
 - **Real-time updates**: Live data synchronization
 
-### Chapter 4: Production Ready
+### Phase 4: Production Ready
 - **Testing strategies**: Unit, integration, and performance tests
 - **Monitoring**: Health checks and metrics
 - **Documentation**: API specs and deployment guides
