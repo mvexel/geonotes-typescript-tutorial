@@ -1,56 +1,15 @@
-# TypeScript Learning Materials
+# Tutorial: Build a Geospatial API with TypeScript
 
-This directory contains structured learning materials for building the GeoNotes API from scratch using TypeScript.
+I am learning Typescript to build a simple but powerful geospatial API. I have a Python background, but people way smarter than me suggested I try TypeScript. I know a fair amount about building production-grade APIs in Python, and enough JS to be dangerous. I am sharing my learning journey and reinforce what I learn by creating this tutorial.
 
-## Directory Structure
+## How I built this
 
-### Phase 0: Project Overview (`00-project-overview/`)
-- **welcome.md**: Inspiring introduction to your learning journey
-- **what-we-are-building.md**: Detailed overview of the GeoNotes API system
+I have a fairly complete Python version of this API, and I used Claude Code to frame a learning path to re-write this API in Typescript. The instructions are in [CLAUDE.md](CLAUDE.md). Claude scaffolds the tutorial chapters for me, but I improve upon them as I learn. Sometimes, I will rewrite entire sections. Other times, Claude does a fairly good job explaining the concepts and I barely touch its writing.
 
-### Phase 1: TypeScript Fundamentals (`01-fundamentals/`)
-- **lessons/**: Core TypeScript concepts and syntax
-- **exercises/**: Hands-on practice problems using GeoNotes domain
-- **references/**: Links to official docs, tutorials, best practices
-- **examples/**: Code samples demonstrating concepts
+## Get Started
 
-### Phase 2: Node.js Ecosystem (`02-nodejs-ecosystem/`)
-- **lessons/**: Project setup, tooling, package management
-- **exercises/**: Setting up development environment
-- **references/**: Node.js and TypeScript tooling documentation
-- **examples/**: Configuration files and project templates
+Learn with me! Open the [introductory chapter](00-project-overview/project-overview.md) and we'll go from there.
 
-### Phase 3: Framework Architecture (`03-frameworks/`)
-- **lessons/**: Express, NestJS, Fastify comparisons
-- **exercises/**: Building API endpoints in different frameworks
-- **references/**: Framework documentation and patterns
-- **examples/**: Sample applications and architecture patterns
+## Paywall
 
-### Phase 4: Database Integration (`04-database/`)
-- **lessons/**: ORM selection, schema design, migrations
-- **exercises/**: Converting Python models to TypeScript
-- **references/**: Database and ORM documentation
-- **examples/**: Schema definitions and query patterns
-
-### Phase 5: Advanced Features (`05-advanced-features/`)
-- **lessons/**: Authentication, monitoring, testing, deployment
-- **exercises/**: Implementing enterprise features
-- **references/**: Security, performance, and production guides
-- **examples/**: Real-world implementation patterns
-
-## Learning Approach
-
-Each phase follows a consistent structure:
-1. **Concept Introduction** - Theory and background
-2. **Practical Examples** - Code demonstrations
-3. **Hands-on Exercises** - Practice with GeoNotes context
-4. **Reference Materials** - Documentation and further reading
-5. **Progress Validation** - Checkpoints and assessments
-
-## Getting Started
-
-**Start here**: Begin with `00-project-overview/welcome.md` for an inspiring introduction to your learning journey.
-
-Then read `00-project-overview/what-we-are-building.md` to understand the GeoNotes system.
-
-After that, work through each phase sequentially starting with `01-fundamentals/lessons/01-typescript-basics.md`. Each lesson builds on previous concepts and relates directly to the GeoNotes API implementation.
+The first couple of chapters will be free. I will charge a reasonable amount for the full course. I think this is fair; a lot of work goes in to creating good learning materials. I have a background in teaching and programming and am confident that I can create something that is valuable for an experienced developer who wants to learn something new.
