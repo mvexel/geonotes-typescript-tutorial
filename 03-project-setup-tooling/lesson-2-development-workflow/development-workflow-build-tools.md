@@ -1080,6 +1080,20 @@ function validateCoordinates(lat: number, lng: number): boolean {
 - Week 12: 100% migration with strict mode
 - Ongoing: <5% time spent on type-related issues
 
+## Practical Exercise: Apply Your TypeScript Knowledge
+
+Now that you understand both TypeScript fundamentals and have the tooling knowledge to work with a professional development environment, it's time to implement the concepts you learned in Chapter 1. This exercise brings together TypeScript interfaces, type safety, and the development workflow you just learned about.
+
+**[Exercise 1: Basic TypeScript Interface Definition](../../../exercises/01-basic-types-interfaces.md)**
+
+This hands-on exercise will have you:
+- Set up a TypeScript project using the tools and configurations you just learned about
+- Define TypeScript interfaces that demonstrate compile-time safety
+- Write functions with proper type annotations and see how TypeScript prevents runtime errors
+- Use Jest for testing, ESLint for code quality, and npm scripts for automation
+
+The exercise builds directly on the GeoNotes domain introduced in Chapter 1, giving you practical experience with the concepts before we move into framework selection and architecture decisions.
+
 **Next:** Continue to [Chapter 2: Framework Selection](../../02-framework-selection/) to choose between Express and NestJS for your GeoNotes API.
 
 ## Additional References

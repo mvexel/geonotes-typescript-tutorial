@@ -30,27 +30,31 @@ Welcome to the hands-on TypeScript learning experience! Instead of just reading 
 - You commit your completed work with provided commit messages
 
 ### Your Learning Journey
-1. **Read the exercise specification** (e.g., `exercises/01-basic-types-interfaces.md`)
-2. **Implement the code** in the corresponding TypeScript files
-3. **Run tests** to validate your work: `npm run validate:exercise-1-1`
-4. **Commit your progress** when complete: `npm run commit:exercise-1-1`
-5. **Move to the next exercise** building on your previous work
+1. **Read the conceptual lessons** to understand TypeScript and tooling concepts
+2. **Complete the hands-on exercise** after you have the necessary background knowledge
+3. **Apply concepts immediately** in a realistic development environment
+4. **Build understanding progressively** through multiple chapters before coding
+5. **Experience professional workflows** from the beginning
 
-## Exercise Structure
+## Learning Flow
 
-### Chapter 1: TypeScript Fundamentals (Available Now)
+### Conceptual Foundation
+1. **Chapter 1: TypeScript Fundamentals** - Learn interfaces, types, and language concepts
+2. **Chapter 3: Project Setup & Tooling** - Understand TypeScript development environment
 
-#### Exercise 1: Basic TypeScript Interface Definition
+### Hands-On Application
+**Exercise 1: Basic TypeScript Interface Definition** (After Chapter 3)
+- **Location**: Introduced in Chapter 3, Lesson 2
 - **File**: `src/types/geonote.ts`
-- **Focus**: Learn interface syntax, basic types, and function annotations
+- **Focus**: Apply Chapter 1 concepts using Chapter 3 tooling knowledge
 - **Time**: ~30 minutes
 - **Validation**: `npm run validate:exercise-1`
 
-**What you'll implement:**
-- A TypeScript interface with various property types
-- Functions with type annotations for parameters and return values
-- Working with optional properties and arrays
-- Understanding how TypeScript prevents runtime errors
+**What you'll experience:**
+- TypeScript interfaces with proper development tooling
+- Testing with Jest, linting with ESLint, building with TypeScript compiler
+- Professional development workflow from day one
+- How conceptual knowledge translates to practical implementation
 
 ## Development Workflow
 
@@ -157,12 +161,12 @@ By completing this exercise, you'll have:
 
 ## Next Steps
 
-1. **Start with Exercise 1** - Open `exercises/01-basic-types-interfaces.md`
-2. **Take your time** - Focus on understanding concepts, not just passing tests
-3. **Experiment** - Try breaking things to understand how TypeScript protects you
-4. **Commit your work** - Build a portfolio of your learning progress
+1. **Start with Chapter 1** - Learn TypeScript fundamentals conceptually
+2. **Continue with Chapter 3** - Understand the development tooling environment  
+3. **Complete Exercise 1** - Apply your knowledge in a hands-on coding experience
+4. **Build understanding progressively** - Each chapter builds on previous knowledge
 
-Ready to begin? Head over to [Exercise 1: Basic TypeScript Interface Definition](exercises/01-basic-types-interfaces.md)!
+Ready to begin? Start with [Chapter 1: TypeScript Fundamentals](01-typescript-fundamentals/lesson-1-typescript-basics/typescript-basics-for-apis.md) to build your conceptual foundation.
 
 ---
 
