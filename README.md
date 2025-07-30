@@ -1,8 +1,19 @@
-# TypeScript Learning Project: Building GeoNotes API
+# Learn TypeScript With Me!
 
-A comprehensive TypeScript course for experienced developers who want to learn production-grade API development. Build a complete location-based API from scratch while mastering TypeScript fundamentals, modern frameworks, and enterprise architecture patterns.
+I am building a geospatial API as a foundation for something new I am starting. I reached for Python / FastAPI initially, but after talking to some developers who are a lot smarter than I am, I decided it would be cool to challenge myself a little and do the whole thing in node / TypeScript. I'd learn someting new in the process and perhaps reconsider some of the choices and assumptions that have settled in my mind writing Python backend code for 15 years or so.
 
-## What You'll Build
+## Me and Claude
+I've been a curious user of Claude Code. I've used it to help me write boring and repetitive code faster, to plan work, and to discuss architecture choices. Why not use it to help me on this learning path? The most obvious prompt would be something like "Here's a Python codebase for a geospatial API. Please help me rewrite this in Typescript". But a) that would be boring b) I'd learn little and c) the end result would be a hot pile of garbage. So instead I thought what I'd try is to have Claude inspect what I had and help me write a structured course that would help me understand how to build this myself. This way I a) learn a lot about writing production backend code with TypeScript, b) produce something of value for others and c) end up with a great foundation for my business.
+
+## Free-ish
+You may think that what you have in front of you is 95% Claude and 5% me. You would be wrong - I have Claude help me with the structure and scaffolding for the lessons, but I add, delete and rewrite a lot as I follow the lessons myself. As I write this, I have only completed the first lesson of what should be 34 lessons when it's all done, and I spent an entire day on it. Future lessons should be quicker to produce as I tweak CLAUDE.md and learn more TypeScript, but it will be a few weeks work for sure.
+
+So where I am going with this, is that this is not going to be a completely free course. Even though I am unemployed right now (which is why I have time to do this in the first place!) my time has value, and I think the end result will have value for you as well. I'll probably tease the first three or four chapters and ask a reasonable amount of money for the full thing. 
+
+Learn with me!
+*Martijn*
+
+## What We'll Build
 
 **GeoNotes** is a production-ready REST API for creating and managing location-based reports. Think municipal 311 systems, crowdsourced mapping tools, or field research platforms. You'll implement:
 
@@ -94,11 +105,3 @@ Starting in Chapter 4, each lesson ends with exercises that build toward a compl
 Ready to begin? Start with [Chapter 1: TypeScript Fundamentals](ch1-typescript-fundamentals/C1L1-typescript-basics-for-apis.md) to build your conceptual foundation.
 
 Alternatively, jump to the [Project Overview](00-project-overview/project-overview.md) for more context about the GeoNotes API you'll be building.
-
----
-
-## About This Course
-
-This course was created through a collaborative process between an experienced developer learning TypeScript and Claude Code. The content combines practical experience building production APIs with TypeScript-specific best practices, resulting in a comprehensive learning path for serious developers.
-
-**Note**: The first few chapters are freely available. The complete course including all exercises and implementation chapters will be available for purchase at a reasonable price that reflects the substantial effort involved in creating quality technical education.
