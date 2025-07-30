@@ -322,9 +322,11 @@ async function createNoteFromAddress(description: string, address: string): Prom
 
 **Reference:** [TypeScript Async/Await](https://www.typescriptlang.org/docs/handbook/release-notes/typescript-1-7.html#asyncawait)
 
-## Understanding Through Examples
+## Conclusion
 
 The concepts in this lesson form the foundation for everything we'll build in the GeoNotes API. When you see TypeScript interfaces in later chapters, remember that they serve as contracts between different parts of your application. When you encounter type guards during input validation, you'll understand why they bridge the gap between external data and TypeScript's type system. These patterns become particularly powerful when building production APIs that need to handle millions of requests while maintaining data integrity.
+
+We will have real exercises for you to work on after we set up our development environment a bit later on. For now, review what you have learned and keep coming back to previous lessons to build a deeper understanding of these important fundamentals.
 
 ## Next Steps
 **Next:** Continue to [Lesson 2: Advanced Types & Domain Modeling](C1L2-advanced-types-domain-modeling.md) to learn how generics and utility types scale these patterns across your entire API.

@@ -6,16 +6,17 @@ We will guide the user in building a location-based API called GeoNotes from scr
 
 ## General instructions
 - You MUST assume the audience is a fairly senior software developer with experience in at least one other language, but little or no experience with building backend APIs in typescript and node.
-- You MUST ensure consistent structure for each lesson with ch1-typescript-fundamentals/C1L1-typescript-basics-for-apis.md as a reference, you MUST use these headers:
+- You MUST ensure consistent structure for each lesson with ch1-typescript-fundamentals/C1L1-typescript-basics-for-apis.md as a the gold standard. 
   - Overview
   - Learning Objectives
   - ...main lesson content...
+  - Conclusion
   - Exercise (if applicable)
   - Next Steps
   - Additional References
 - You MUST review each file at the start of a session for specific instructions wherever you are mentioned with @claude
 - You MUST be critical of my choices. I have teaching experience but I have never created a technical course before
-- - You MUST NOT be overly obsequious. Stay to the point, but do explain concepts in depth. 
+- You MUST NOT be overly obsequious. Stay to the point, but do explain concepts in depth. 
 - You MUST use a flowing prose style rather than rigid bullet-point structures. Instead of "Why needed:", "How we implement:", "How TypeScript helps:" headers, weave the engineering context, implementation approach, and TypeScript advantages together naturally in conversational paragraphs. The goal is gentler, more engaging technical writing that reads like a thoughtful discussion rather than a reference manual.
 - You MUST avoid using bulleted or numbered lists as much as possible
 - You MUST add references to the official documentation whenever a new concept is introduced.
@@ -119,8 +120,15 @@ GeoNotes is an production-grade REST API for submitting "geonotes" - location-ba
 
 Each phase shall consist of lessons that break the topic down into self-contained learning steps that the user can complete within 2 hours.
 
+## Exercises
+- Each lesson FROM CHAPTER 4 ONWARDS MUST end with exercise that reinforces the material taught.
+- The exercises MUST build on the previous work
+- When the student completes all exercises, she MUST have a working, production grade API codebase that is ready to be deployed. 
+- CHAPTERS 1-3 SHALL NOT contain exercises. 
+
 ## Structure
-Each phase shall have its own directory under the root of the project. Each directory shall shall have one markdown file for each lesson starting with CxLy (Chapter x Lesson y). Each lesson from Chapter 4 onwards MUST end with exercise that reinforces the material taught. There shall not be any other subdirectories. If we are using sample data, we will place this sample data in a directory sample-data at the root level. 
+Each phase shall have its own directory under the root of the project. Each directory shall shall have one markdown file for each lesson starting with CxLy (Chapter x Lesson y).
+There shall not be any other subdirectories. If we are using sample data, we will place this sample data in a directory sample-data at the root level. 
 
 ## Learning Principles
 - **Hands-on approach**: Write code for every concept learned

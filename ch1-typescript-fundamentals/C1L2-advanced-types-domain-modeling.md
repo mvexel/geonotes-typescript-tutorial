@@ -261,7 +261,7 @@ const highSeverityInfrastructure = await new NoteQueryBuilder()
   .execute();
 ```
 
-## Building Towards Production Systems
+## Conclusion
 
 The advanced type patterns in this lesson become essential as your API grows beyond simple data storage. Generics let you create consistent response wrappers, error handling patterns, and validation functions that work across all your data types. Utility types keep your interfaces synchronized as your domain model evolves, reducing maintenance overhead and preventing drift. Discriminated unions ensure that complex business logic is handled completely and correctly.
 
