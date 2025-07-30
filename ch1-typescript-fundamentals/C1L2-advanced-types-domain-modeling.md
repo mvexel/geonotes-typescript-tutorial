@@ -269,7 +269,7 @@ When you move into framework selection and API implementation in later chapters,
 
 ## Next Steps
 
-**Next:** Continue to [Lesson 3: Async TypeScript & Error Handling](../lesson-3-async-typescript/async-typescript-error-handling.md) to learn how TypeScript handles Promise types and provides compile-time safety for asynchronous operations.
+**Next:** Continue to [Lesson 3: Async TypeScript & Error Handling](C1L3-async-typescript-error-handling.md) to learn how TypeScript handles Promise types and provides compile-time safety for asynchronous operations.
 
 ## Additional References
 

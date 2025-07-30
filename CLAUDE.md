@@ -6,11 +6,11 @@ We will guide the user in building a location-based API called GeoNotes from scr
 
 ## General instructions
 - You MUST assume the audience is a fairly senior software developer with experience in at least one other language, but little or no experience with building backend APIs in typescript and node.
-- You MUST ensure consistent structure for each lesson with 01-typescript-fundamentals/lesson-1-typescript-basics/typescript-basics-for-apis.md as a reference:
+- You MUST ensure consistent structure for each lesson with ch1-typescript-fundamentals/C1L1-typescript-basics-for-apis.md as a reference, you MUST use these headers:
   - Overview
   - Learning Objectives
   - ...main lesson content...
-  - Exercise
+  - Exercise (if applicable)
   - Next Steps
   - Additional References
 - You MUST review each file at the start of a session for specific instructions wherever you are mentioned with @claude
@@ -59,23 +59,68 @@ GeoNotes is an production-grade REST API for submitting "geonotes" - location-ba
 - **Scale**: Designed for millions to billions of notes globally
 
 ## TypeScript Learning Approach
-- Chapter 1: TypeScript Fundamentals
-- Chapter 2: Framework Selection & Architecture
-- Chapter 3: Project Setup & Tooling
-- Chapter 4: Database Selection & Model Integration
-- Chapter 5: Basic API Implementation
-- Chapter 6: Testing Strategy
-- Chapter 7: Authentication & Security
-- Chapter 8: Bulk Operations & Performance
-- Chapter 9: Monitoring & Observability
-- Chapter 10: Deployment & Production
-- Chapter 11: Documentation
-- Chapter 12: Conclusion
+### Chapter 1: TypeScript Fundamentals
+- Lesson 1: TypeScript Basics for APIs
+- Lesson 2: Advanced Types & Domain Modeling
+- Lesson 3: Async TypeScript & Error Handling
+
+### Chapter 2: Framework Selection & Architecture
+- Lesson 1: Express vs NestJS for GeoNotes
+- Lesson 2: Architecture Patterns & Design
+- Lesson 3: Request/Response Pipeline
+
+### Chapter 3: Project Setup & Tooling
+- Lesson 1: Framework-Specific Project Structure
+- Lesson 2: Development Workflow & Build Tools
+- Lesson 3: Environment Configuration
+
+### Chapter 4: Database Selection & Model Integration
+- Lesson 1: PostgreSQL + PostGIS Setup
+- Lesson 2: ORM Selection & Configuration
+- Lesson 3: Data Models & Spatial Migrations
+
+### Chapter 5: Basic API Implementation
+- Lesson 1: Note Creation Endpoint
+- Lesson 2: Note Retrieval & Spatial Queries
+- Lesson 3: Note Updates & Deletion
+
+### Chapter 6: Testing Strategy
+- Lesson 1: Unit Testing with Jest
+- Lesson 2: Integration & API Testing
+- Lesson 3: Geographic Test Data & Fixtures
+
+### Chapter 7: Authentication & Security
+- Lesson 1: JWT Implementation
+- Lesson 2: Authorization Middleware
+- Lesson 3: Input Validation & Sanitization
+
+### Chapter 8: Bulk Operations & Performance
+- Lesson 1: Batch Processing Design
+- Lesson 2: Database Optimization
+- Lesson 3: Caching Strategies
+
+### Chapter 9: Monitoring & Observability
+- Lesson 1: Logging & Structured Events
+- Lesson 2: Health Checks & Metrics
+- Lesson 3: Error Tracking & Alerting
+
+### Chapter 10: Deployment & Production
+- Lesson 1: Docker & Environment Setup
+- Lesson 2: CI/CD Pipeline
+- Lesson 3: Production Monitoring & Scaling
+
+### Chapter 11: Documentation
+- Lesson 1: OpenAPI/Swagger Generation
+- Lesson 2: Code Documentation Standards
+- Lesson 3: Deployment & Operations Guides
+
+### Chapter 12: Conclusion
+- Lesson 1: Architecture Review & Next Steps
 
 Each phase shall consist of lessons that break the topic down into self-contained learning steps that the user can complete within 2 hours.
 
 ## Structure
-Each phase shall have its own directory under the root of the project. Each directory shall have a subdirectory for each lesson. Each subdirectory shall have one markdown file containing the lesson materials. Each lesson shall end with exercise that reinforce the material taught. There shall not be any other subdirectories. If we are using sample data, we will place this sample data in a directory sample-data at the root level. 
+Each phase shall have its own directory under the root of the project. Each directory shall shall have one markdown file for each lesson starting with CxLy (Chapter x Lesson y). Each lesson from Chapter 4 onwards MUST end with exercise that reinforces the material taught. There shall not be any other subdirectories. If we are using sample data, we will place this sample data in a directory sample-data at the root level. 
 
 ## Learning Principles
 - **Hands-on approach**: Write code for every concept learned

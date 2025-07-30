@@ -174,4 +174,4 @@ By the end of this journey, you'll have:
 
 The course is structured in chapters that build progressively. You'll start with TypeScript fundamentals applied to the GeoNotes domain, then build the actual API implementation.
 
-**Next:** Continue to [Chapter 1: TypeScript Fundamentals](../01-typescript-fundamentals/lesson-1-fundamentals/typescript-basics.md) to begin with type system concepts applied to location-based data structures.
+**Next:** Continue to [Chapter 1: TypeScript Fundamentals](../ch1-typescript-fundamentals/C1L1-typescript-basics-for-apis.md) to begin with type system concepts applied to location-based data structures.

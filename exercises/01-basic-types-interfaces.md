@@ -103,5 +103,5 @@ With this foundation of TypeScript concepts and development tooling, you're read
 - [TypeScript Handbook - Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
 - [Jest Testing Framework](https://jestjs.io/docs/getting-started)
 - [ESLint TypeScript Rules](https://typescript-eslint.io/rules/)
-- Chapter 1: [TypeScript Basics for APIs](../01-typescript-fundamentals/lesson-1-typescript-basics/typescript-basics-for-apis.md)
-- Chapter 3: [Development Workflow & Build Tools](../03-project-setup-tooling/lesson-2-development-workflow/development-workflow-build-tools.md)
+- Chapter 1: [TypeScript Basics for APIs](../ch1-typescript-fundamentals/C1L1-typescript-basics-for-apis.md)
+- Chapter 3: [Development Workflow & Build Tools](../ch3-project-setup-tooling/C3L2-development-workflow-build-tools.md)

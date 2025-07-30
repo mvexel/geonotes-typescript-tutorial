@@ -166,7 +166,7 @@ By completing this exercise, you'll have:
 3. **Complete Exercise 1** - Apply your knowledge in a hands-on coding experience
 4. **Build understanding progressively** - Each chapter builds on previous knowledge
 
-Ready to begin? Start with [Chapter 1: TypeScript Fundamentals](01-typescript-fundamentals/lesson-1-typescript-basics/typescript-basics-for-apis.md) to build your conceptual foundation.
+Ready to begin? Start with [Chapter 1: TypeScript Fundamentals](ch1-typescript-fundamentals/C1L1-typescript-basics-for-apis.md) to build your conceptual foundation.
 
 ---
 

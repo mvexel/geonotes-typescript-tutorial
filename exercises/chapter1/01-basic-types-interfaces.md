@@ -66,4 +66,4 @@ When the exercise is complete:
 
 - [TypeScript Handbook - Interfaces](https://www.typescriptlang.org/docs/handbook/2/objects.html)
 - [TypeScript Handbook - Functions](https://www.typescriptlang.org/docs/handbook/2/functions.html)
-- Original lesson: [TypeScript Basics for APIs](../01-typescript-fundamentals/lesson-1-typescript-basics/typescript-basics-for-apis.md)
+- Original lesson: [TypeScript Basics for APIs](../../ch1-typescript-fundamentals/C1L1-typescript-basics-for-apis.md)
