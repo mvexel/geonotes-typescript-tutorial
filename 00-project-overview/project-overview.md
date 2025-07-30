@@ -88,6 +88,8 @@ Some of the ingredients we will use will sound familiar to you, but it will be u
 
 ## Course Organization
 
+@claude add links to each lesson as soon as we create them
+
 ### Chapter 1: TypeScript Fundamentals
 - Lesson 1: TypeScript Basics for APIs
 - Lesson 2: Advanced Types & Domain Modeling
