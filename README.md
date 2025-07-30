@@ -1,10 +1,10 @@
-# Tutorial: Build a Geospatial API with TypeScript
+# Build a Geospatial API with TypeScript
 
-I am learning Typescript to build a simple but powerful geospatial API. I have a Python background, but people way smarter than me suggested I try TypeScript. I know a fair amount about building production-grade APIs in Python, and enough JS to be dangerous. I am sharing my learning journey and reinforce what I learn by creating this tutorial.
+I am learning Typescript to build a simple but powerful geospatial API. I have a Python background, but people way smarter than me suggested I try TypeScript. I know a fair amount about building production-grade APIs in Python, and enough JS to be dangerous. I am sharing my learning journey and reinforce what I learn by creating this course.
 
 ## How I built this
 
-I have a fairly complete Python version of this API, and I used Claude Code to frame a learning path to re-write this API in Typescript. The instructions are in [CLAUDE.md](CLAUDE.md). Claude scaffolds the tutorial chapters for me, but I improve upon them as I learn. Sometimes, I will rewrite entire sections. Other times, Claude does a fairly good job explaining the concepts and I barely touch its writing.
+I have a fairly complete Python version of this API, and I used Claude Code to frame a learning path to re-write this API in Typescript. The instructions are in [CLAUDE.md](CLAUDE.md). Claude scaffolds the course chapters for me, but I improve upon them as I learn. Sometimes, I will rewrite entire sections. Other times, Claude does a fairly good job explaining the concepts and I barely touch its writing.
 
 ## Get Started
 
