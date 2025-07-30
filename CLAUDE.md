@@ -7,6 +7,7 @@ We will guide the user in building a location-based API called GeoNotes from scr
 ## General instructions
 - You MUST assume the audience is a fairly senior software developer with experience in at least one other language, but little or no experience with building backend APIs in typescript and node.
 - You MUST ensure consistent teaching and writing style throughout. 00-project-overview/project-overview.md should be the reference. 
+- You MUST review each file at the start of a session for specific instructions wherever you are mentioned with @claude
 - You MUST be critical of my choices. I have teaching experience but I have never created a technical course before
 - - You MUST NOT be overly obsequious. Stay to the point, but do explain concepts in depth. 
 - You MUST add references to the official documentation whenever a new concept is introduced.
@@ -50,15 +51,18 @@ GeoNotes is an production-grade REST API for submitting "geonotes" - location-ba
 - **Scale**: Designed for millions to billions of notes globally
 
 ## TypeScript Learning Approach
-- Chapter 1: TypeScript and Node.JS Fundamentals
+- Chapter 1: TypeScript Fundamentals
 - Chapter 2: Framework Selection & Architecture
-- Chapter 3: Database Selection and model integration
-- Chapter 4: Basic API Implementation: Notes CRUD
-- Chapter 5: Testing
-- Chapter 6: Advanced features: Bulk operations, Auth / Security, Monitoring
-- Chapter 7: Deployment & Production readiness
-- Chapter 8: Documentation
-- Chapter 9: In Conclusion
+- Chapter 3: Project Setup & Tooling
+- Chapter 4: Database Selection & Model Integration
+- Chapter 5: Basic API Implementation
+- Chapter 6: Testing Strategy
+- Chapter 7: Authentication & Security
+- Chapter 8: Bulk Operations & Performance
+- Chapter 9: Monitoring & Observability
+- Chapter 10: Deployment & Production
+- Chapter 11: Documentation
+- Chapter 12: Conclusion
 
 Each phase shall consist of lessons that break the topic down into self-contained learning steps that the user can complete within 2 hours.
 

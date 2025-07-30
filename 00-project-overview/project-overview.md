@@ -42,11 +42,11 @@ With this API, you'll be creating the infrastructure that transforms casual obse
 - **eBird** has collected over 1 billion bird observations for scientific research
 - **Waze** crowdsources traffic data from 140 million active users
 
-The patterns you'll learn building GeoNotes power these massive, impactful systems.
+The patterns you'll learn building a geospatial API that could power these massive, impactful systems.
 
 ## Core Concepts
 
-At its heart, a "geonote" is just a message tied to coordinates:
+At its core, a "geonote" is just a message tied to coordinates:
 
 ```json
 {
@@ -62,7 +62,7 @@ At its heart, a "geonote" is just a message tied to coordinates:
 }
 ```
 
-But we'll build sophisticated features around this simple model.
+While it is not difficult to implement an API that supports basic CRUD operations on a model like this, we will build an architecture around it that includes spatial querying, bulk operations, user administration, monitoring and production deployment practices.
 
 ## Concepts, Patterns and Technology we will use
 
@@ -88,29 +88,63 @@ Some of the ingredients we will use will sound familiar to you, but it will be u
 
 ## Course Organization
 
-### Phase 1: TypeScript Foundations
-- **Type system basics**: Numbers, strings, booleans, objects
-- **Interfaces and types**: Defining data structures
-- **Functions and classes**: Building reusable components
-- **Generics**: Writing flexible, reusable code
+### Chapter 1: TypeScript Fundamentals
+- Lesson 1: TypeScript Basics for APIs
+- Lesson 2: Advanced Types & Domain Modeling
+- Lesson 3: Async TypeScript & Error Handling
 
-### Phase 2: Building the API
-- **Node.js setup**: Project structure and tooling
-- **HTTP server**: Handling requests and responses
-- **Database integration**: Persistent data storage
-- **Authentication**: Secure user access
+### Chapter 2: Framework Selection & Architecture
+- Lesson 1: Express vs NestJS for GeoNotes
+- Lesson 2: Architecture Patterns & Design
+- Lesson 3: Request/Response Pipeline
 
-### Phase 3: Advanced Features
-- **Geographic queries**: Finding notes by location
-- **Bulk operations**: Handling large datasets
-- **Privacy controls**: Public vs private notes
-- **Real-time updates**: Live data synchronization
+### Chapter 3: Project Setup & Tooling
+- Lesson 1: Framework-Specific Project Structure
+- Lesson 2: Development Workflow & Build Tools
+- Lesson 3: Environment Configuration
 
-### Phase 4: Production Ready
-- **Testing strategies**: Unit, integration, and performance tests
-- **Monitoring**: Health checks and metrics
-- **Documentation**: API specs and deployment guides
-- **Security**: Input validation and protection
+### Chapter 4: Database Selection & Model Integration
+- Lesson 1: PostgreSQL + PostGIS Setup
+- Lesson 2: ORM Selection & Configuration
+- Lesson 3: Data Models & Spatial Migrations
+
+### Chapter 5: Basic API Implementation
+- Lesson 1: Note Creation Endpoint
+- Lesson 2: Note Retrieval & Spatial Queries
+- Lesson 3: Note Updates & Deletion
+
+### Chapter 6: Testing Strategy
+- Lesson 1: Unit Testing with Jest
+- Lesson 2: Integration & API Testing
+- Lesson 3: Geographic Test Data & Fixtures
+
+### Chapter 7: Authentication & Security
+- Lesson 1: JWT Implementation
+- Lesson 2: Authorization Middleware
+- Lesson 3: Input Validation & Sanitization
+
+### Chapter 8: Bulk Operations & Performance
+- Lesson 1: Batch Processing Design
+- Lesson 2: Database Optimization
+- Lesson 3: Caching Strategies
+
+### Chapter 9: Monitoring & Observability
+- Lesson 1: Logging & Structured Events
+- Lesson 2: Health Checks & Metrics
+- Lesson 3: Error Tracking & Alerting
+
+### Chapter 10: Deployment & Production
+- Lesson 1: Docker & Environment Setup
+- Lesson 2: CI/CD Pipeline
+- Lesson 3: Production Monitoring & Scaling
+
+### Chapter 11: Documentation
+- Lesson 1: OpenAPI/Swagger Generation
+- Lesson 2: Code Documentation Standards
+- Lesson 3: Deployment & Operations Guides
+
+### Chapter 12: Conclusion
+- Lesson 1: Architecture Review & Next Steps
 
 ## Learning Outcomes
 
