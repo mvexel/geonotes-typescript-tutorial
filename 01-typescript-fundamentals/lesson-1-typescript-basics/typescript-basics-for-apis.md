@@ -113,11 +113,9 @@ Geographic applications have unique constraints that make type safety critical:
 
 ### Coordinate Validation Requirements
 
-**Why it matters:** Invalid coordinates can break spatial queries, cause database errors, or return nonsensical results. A latitude of 91° or longitude of 181° should never reach your database.
+Invalid coordinates can break spatial queries, cause database errors, or return nonsensical results. A latitude of 91° or longitude of 181° should never reach your database. But coordinate validation is tricky because coordinates can arrive in different formats - arrays, objects with different property names, or even strings that need parsing.
 
-**How we handle it:** Multi-layer validation with TypeScript contracts + runtime checks.
-
-**How TypeScript helps:** Prevents coordinate data from being accidentally corrupted during processing.
+The approach that works is multi-layer validation: TypeScript contracts ensure consistent data shapes during processing, while runtime checks validate the actual numeric ranges. This combination prevents both structural issues (wrong property names) and business logic violations (invalid ranges).
 
 ```typescript
 // Without TypeScript - coordinate corruption
@@ -155,11 +153,9 @@ function updateNoteLocation(noteId: number, coords: Coordinates): void {
 
 ### Flexible User Data Requirements
 
-**Why it matters:** Different note types need different metadata. Infrastructure reports need severity levels, business reviews need ratings, events need dates.
+Different note types need different metadata. Infrastructure reports need severity levels, business reviews need ratings, events need dates. The challenge is building a system that's both flexible enough to handle diverse data and strict enough to prevent errors.
 
-**How we handle it:** Discriminated unions for type-safe polymorphism + extensible metadata.
-
-**How TypeScript helps:** Ensures you handle all note types and access the right properties for each type.
+Discriminated unions provide type-safe polymorphism - you can have different note types with different required fields, and TypeScript ensures you handle each type correctly. The type field acts as a discriminator, telling TypeScript which properties are available on each specific note instance.
 
 ```typescript
 // Flexible but type-safe note structure
@@ -209,11 +205,9 @@ Production APIs need multiple layers of validation and transformation. TypeScrip
 
 ### Input Validation Layer
 
-**Why needed:** External data can't be trusted. Users send malformed JSON, missing fields, wrong types.
+External data can't be trusted - users send malformed JSON, missing fields, or wrong data types. For geographic APIs, this is especially critical since invalid coordinates can crash spatial queries or corrupt your database.
 
-**How we implement:** Type guards that bridge runtime validation with compile-time types.
-
-**How TypeScript helps:** Once validated, TypeScript knows the data is safe throughout your application.
+The solution is to create type guards that bridge runtime validation with compile-time types. These functions validate incoming data and inform TypeScript about what passed validation, giving you type safety throughout the rest of your application.
 
 ```typescript
 // Runtime validation that informs TypeScript
@@ -248,11 +242,9 @@ app.post('/notes', (req, res) => {
 
 ### Response Formatting Layer
 
-**Why needed:** Internal data models often contain sensitive info or aren't optimized for API responses.
+Internal data models often contain sensitive information or aren't optimized for API responses. Your database might store user IDs, internal notes, or audit fields that shouldn't be exposed to clients. Additionally, you might want to restructure data for better client consumption.
 
-**How we implement:** Transformation functions with explicit input/output types.
-
-**How TypeScript helps:** Ensures transformations are complete and consistent.
+Transformation functions with explicit input and output types solve this problem elegantly. TypeScript ensures these transformations are complete and consistent - you can't accidentally leak sensitive data or forget required fields.
 
 ```typescript
 // Internal database model (might have sensitive fields)
@@ -292,11 +284,9 @@ function formatNoteForPublicAPI(dbNote: DatabaseNote): PublicNote {
 
 ## Type Safety Across Async Operations
 
-**Why it matters:** Geographic APIs involve async operations - database queries, geocoding services, spatial calculations. Type errors in async code are harder to debug.
+Geographic APIs involve many async operations - database queries, geocoding services, spatial calculations. Type errors in async code are particularly nasty because they often manifest as runtime failures in production, long after the initial request.
 
-**How we handle it:** Typed Promises and Result types for explicit error handling.
-
-**How TypeScript helps:** Prevents async type confusion and ensures proper error handling.
+Consider a common scenario: creating a note from an address. You need to geocode the address, validate the confidence level, then store the result. Each step has different data shapes and potential failure modes. TypeScript's typed Promises help you navigate this complexity by ensuring each async operation returns the expected data shape and that you handle all the transformations correctly.
 
 ```typescript
 // Type-safe async operations
