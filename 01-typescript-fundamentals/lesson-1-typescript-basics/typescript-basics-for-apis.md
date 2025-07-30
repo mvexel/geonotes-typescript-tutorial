@@ -2,7 +2,10 @@
 
 ## Learning Objectives
 
-By the end of this lesson, you'll understand why production APIs need structured data contracts, learn how TypeScript enforces these contracts at compile time, and apply TypeScript's type system to geographic data modeling.
+By the end of this lesson, you will have mastered: 
+- Why production APIs need structured data contracts
+- How TypeScript enforces these contracts at compile time
+- How to apply TypeScript's type system to geographic data modeling.
 
 ## Why APIs Need Data Contracts
 
